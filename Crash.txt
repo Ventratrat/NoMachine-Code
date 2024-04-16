@@ -1,0 +1,7 @@
+def recursive_crash(n):
+    return recursive_crash(n+1)
+
+try:
+    recursive_crash(0)
+except RecursionError:
+    print(f"The program crashed due to max recursion depth exceeded.")

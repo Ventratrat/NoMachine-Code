@@ -1,0 +1,15 @@
+def average_numbers(file_path):
+    try:
+        with open(file_path, 'r') as file:
+            lines = file.readlines()
+            numbers = [float(line.strip()) for line in lines if line.strip().replace('.','',1).isdigit()]
+            if numbers:
+                return sum(numbers) / len(numbers)
+            else:
+                return "No valid numbers found in the file."
+    except FileNotFoundError:
+        return f"File '{file_path}' not found."
+
+file_path = "example.txt'
+average = average_numbers(file_path)
+printf(f"Average of numbers in {file_path}: {average}")

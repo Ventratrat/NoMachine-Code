@@ -1,0 +1,9 @@
+import sys
+
+def check_endianness():
+    if sys.byteorder == 'little':
+        return "Little endian"
+    else:
+        return "Big endian"
+
+print(f"Endianess: {check_endianness()}")

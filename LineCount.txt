@@ -1,0 +1,11 @@
+def count_lines(file_path):
+    try:
+        with open(file_path, 'r') as file:
+            lines = file.readlines()
+            return len(lines)
+    except FileNotFoundError:
+        return f"File '{file_path}' not found."
+
+file_path = "nums.txt"
+line_count = count_lines(file_path)
+print(f"Number of lines in {file_path}: {line_count}")
